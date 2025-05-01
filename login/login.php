@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 
 <?php
-    if($_GET['error']){
-        
+    if(isset($_GET['error'])){
+        $error = true;
+    } else {
+        $error = false;
     }
 ?>
 
@@ -19,18 +21,26 @@
             <h1>Iniciar sesion</h1>
         </div>
 
-        <div class="log_cuerpo">
-            <label for="usuario">
-                <img class="log_usuario" src="img/log_usuario.jpg" >
-            </label>
-            <input type="text" name="usuario" id="usuario" placeholder="Usuario" required>
+        <form action="autenticador" method="post">
+            <div class="log_cuerpo">
+                <?php
+                    if($error){
+                        echo "<p>El usuario o la contraseña no son correctos</p>";
+                    }
+                ?>
 
-            <br/><br/>
+                <label for="correo">
+                    <img class="log_correo" src="img/log_correo.jpg" >
+                </label>
+                <input type="text" name="correo" id="correo" placeholder="Correo electronico" required>
 
-            <label for="password">
-                <img class="log_password" src="img/password.jpg">
-            </label>
-            <input type="password" name="password" id="password" placeholder="Contraseña" required>    
-        </div>
+                <br/><br/>
+
+                <label for="password">
+                    <img class="log_password" src="img/password.jpg">
+                </label>
+                <input type="password" name="password" id="password" placeholder="Contraseña" required>    
+            </div>
+        </form>
     </body>
 </html>
