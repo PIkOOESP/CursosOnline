@@ -1,0 +1,58 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Contenedor del login */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 400px;
+    height: 250px;
+    margin-right: 10px;
+}
+
+/* Título */
+.log_titulo{
+    color: #333;
+    margin-bottom: 400px;
+    margin-right: -300px;
+}
+
+/* Área de ingreso */
+.log_cuerpo p {
+    color: red;
+    font-size: 14px;
+}
+
+.log_cuerpo label img {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.log_cuerpo input {
+    width: 80%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Efectos interactivos */
+.log_cuerpo input:focus {
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}

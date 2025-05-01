@@ -17,12 +17,12 @@
     <link rel="icon" type="image/x-icon" href="">
 </head>
     <body>
-        <div class="log_titulo">
-            <h1>Iniciar sesion</h1>
-        </div>
+            <h1 class="log_titulo">Iniciar sesion</h1>
+       
+        <div class="log_cuerpo">
+            <form action="autenticacion.php" method="post">
+                <input type="hidden" name="admin" value ="<?php echo $_GET['admin'] ?>">
 
-        <form action="autenticacion.php" method="post">
-            <div class="log_cuerpo">
                 <?php
                     if($error){
                         echo "<p>El usuario o la contraseña no son correctos</p>";
@@ -32,7 +32,7 @@
                 <label for="correo">
                     <img class="log_correo" src="img/log_correo.jpg" >
                 </label>
-                <input type="mail" name="correo" id="correo" placeholder="Correo electronico" required>
+                <input type="email" name="correo" id="correo" placeholder="Correo electronico" required>
 
                 <br/><br/>
 
@@ -42,7 +42,13 @@
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="" required>
                 
                 <input type="submit" value="Entrar">
-            </div>
-        </form>
+                
+                <p>¿Aun no tienes cuenta? <a href="../registro/registro.php?admin=<?php echo $_GET['admin']; ?>">Registrate aqui</a></p>
+            </form>
+        </div>
+
+        <div class="log_registro">
+            
+        </div>
     </body>
 </html>

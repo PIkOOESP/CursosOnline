@@ -4,9 +4,16 @@
 
     session_start();
 
-    if($stmt = $conexion -> prepare("SELECT id, password from alumnos where email = ?")){
-        $stmt -> bind_param("s", $respuesta['correo']);
-        $stmt -> execute();
+    if($respuesta['admin']==0){
+        if($stmt = $conexion -> prepare("SELECT id, password from alumnos where email = ?")){
+            $stmt -> bind_param("s", $respuesta['correo']);
+            $stmt -> execute();
+        }
+    } else {
+        if($stmt = $conexion -> prepare("SELECT id, password from profesores where email = ?")){
+            $stmt -> bind_param("s", $respuesta['correo']);
+            $stmt -> execute();
+        }
     }
 
     $stmt -> store_result();
@@ -23,10 +30,10 @@
 
             header('Location:../index.php');
         } else {
-            header('Location:login.php?error=0');
+            header('Location:login.php?error=0&admin='.$respuesta['admin']);
         } 
     } else {
-        header('Location:login.php?error=0');
+        header('Location:login.php?error=0&admin='.$respuesta['admin']);
     }
 
     $stmt -> close();
