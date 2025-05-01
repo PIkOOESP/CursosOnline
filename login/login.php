@@ -21,7 +21,7 @@
             <h1>Iniciar sesion</h1>
         </div>
 
-        <form action="autenticador" method="post">
+        <form action="autenticacion.php" method="post">
             <div class="log_cuerpo">
                 <?php
                     if($error){
@@ -32,14 +32,16 @@
                 <label for="correo">
                     <img class="log_correo" src="img/log_correo.jpg" >
                 </label>
-                <input type="text" name="correo" id="correo" placeholder="Correo electronico" required>
+                <input type="mail" name="correo" id="correo" placeholder="Correo electronico" required>
 
                 <br/><br/>
 
                 <label for="password">
                     <img class="log_password" src="img/password.jpg">
                 </label>
-                <input type="password" name="password" id="password" placeholder="Contraseña" required>    
+                <input type="password" name="password" id="password" placeholder="Contraseña" class="" required>
+                
+                <input type="submit" value="Entrar">
             </div>
         </form>
     </body>
