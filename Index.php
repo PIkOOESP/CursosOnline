@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <?php
-    require('/Conexion/conexion.php');
+    require('conexion/conexion.php');
 ?>
 
 <html>
