@@ -41,7 +41,7 @@
                 </label>
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="" required>
                 
-                <input type="submit" value="Entrar">
+                <input class="boton" type="submit" value="Entrar">
                 
                 <p>¿Aun no tienes cuenta? <a href="../registro/registro.php?admin=<?php echo $_GET['admin']; ?>">Registrate aqui</a></p>
             </form>
