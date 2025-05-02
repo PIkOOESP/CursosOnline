@@ -17,7 +17,7 @@ form {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 400px;
-    height: 250px;
+    max-height: 400px;
     margin-right: 10px;
 }
 
@@ -92,4 +92,26 @@ margin-top: 50px;
 .prelogin_titulo{
     color: #333;
     font-size: 30px;
+}
+.registro_titulo{
+    color: #333;
+    font-size: 30px;
+    margin-left: 140px;
+}
+.registro_cuerpo input:focus {
+    outline: none;
+    border-color: rgba(75, 213, 137, 0.5);
+    box-shadow: 0px 0px 5px rgba(75, 213, 137, 0.5);
+
+}
+.registro_cuerpo input {
+    border: 1px solid #cccccc;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.registro_cuerpo button {
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    background-color: rgba(75, 213, 137, 0.5);
 }
