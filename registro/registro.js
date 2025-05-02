@@ -22,7 +22,7 @@ function verificar_campo(campo,longitud,limite){
                 document.getElementById('error_'+campo).innerHTML="Debe tener de 2 a 30 caracteres";
             }
 
-            if(campo == "apellidos"){
+            if(campo == "apellido"){
                 document.getElementById('error_'+campo).innerHTML="Debe tener de 2 a 50 caracteres";
             }
 
@@ -44,7 +44,7 @@ function verificar(){
             validar = false;
         }
 
-        if(!verificar_campo("apellidos",2,50)){
+        if(!verificar_campo("apellido",2,50)){
             validar = false;
         }
 
@@ -58,7 +58,5 @@ function verificar(){
 
     if(validar){
         formulario.submit();
-    } else {
-        document.getElementById('error').innerHTML="Hay campos sin rellenar";
     }
 }

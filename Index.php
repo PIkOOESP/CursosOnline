@@ -19,7 +19,7 @@
             </div>
 
             <div class = "top_indice_login" >
-                <a href="prelogin.html">Iniciar sesion</a>
+                <a href="login/prelogin.html">Iniciar sesion</a>
             </div>
         </div>    
     </body>
