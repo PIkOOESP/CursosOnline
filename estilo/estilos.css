@@ -56,3 +56,36 @@ form {
     border-color: #007BFF;
     box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
 }
+
+/*Estilo de prelogin*/
+.prelogin_botones{
+    height: 250px;
+}
+.prelogin_botones a{
+    border: 0.5px solid grey;
+    border-radius: 5px;
+    width: 50px;
+    margin-top: 1%;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+.prelogin_botones a:hover{
+    outline: none;
+    border-color: #007BFF;
+    box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+.prelogin_alumno{
+margin-top: 50px;
+}
+
+.prelogin_profesor{
+    margin-top: 50px;
+}
+
+.prelogin_titulo{
+    color: #333;
+    font-size: 30px;
+}
