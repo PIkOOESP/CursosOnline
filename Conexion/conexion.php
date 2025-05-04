@@ -1,6 +1,6 @@
 <?php
     $usuario="root";
-    $password="MySQL";
+    $password="root";
     $servidor="localhost";
     $basededatos="cursosonline";
     $conexion = new mysqli($servidor,$usuario,$password,$basededatos);

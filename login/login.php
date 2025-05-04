@@ -31,7 +31,7 @@
                 ?>
 
                 <label for="correo">
-                    <img class="log_correo" src="img/log_correo.jpg" >
+                    <img class="log_correo" src="../imagenes/log_correo.jpg" >
                 </label>
                 <input type="email" name="correo" id="correo" placeholder="Correo electronico" required>
 
