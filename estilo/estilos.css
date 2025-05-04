@@ -1,15 +1,62 @@
 /* Estilos generales */
-body {
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
+}
+
+/* Contenedor principal */
+.principal_indice {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header fijo */
+.top_indice {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #4bd589;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 2px solid black;
+}
+
+/* Contenedor del carrusel */
+.contenedor_carrusel {
+    flex-grow: 1; /* Permite que el contenido ocupe todo el espacio disponible */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    margin-top: 80px; /* Ajuste para evitar solapamiento con el header */
+    margin-bottom: 100px;
 }
 
-/* Contenedor del login */
+/* Footer */
+.bottom_indice {
+    background-color: #4bd589;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    border-top: 2px solid black;
+    position: relative;
+}
+
+/* Botones y enlaces */
+.top_indice a, .bottom_indice a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Formulario */
 form {
     background: white;
     padding: 20px;
@@ -18,14 +65,31 @@ form {
     text-align: center;
     width: 400px;
     max-height: 400px;
-    margin-right: 10px;
 }
 
-/* Título */
+/* Botones */
+.registro_cuerpo button, .log_cuerpo input.boton {
+    background-color: rgba(75, 213, 137, 0.7);
+    border: 1px solid #4bd589;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.registro_cuerpo button:hover, .log_cuerpo input.boton:hover {
+    background-color: rgba(75, 213, 137, 1);
+    box-shadow: 0px 0px 5px rgba(75, 213, 137, 0.7);
+}
+.registro_cuerpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Hace que ocupe toda la altura de la pantalla */
+    flex-direction: column;
+}
 .log_titulo{
     color: #333;
-    margin-bottom: 400px;
-    margin-right: -300px;
 }
 
 /* Área de ingreso */
@@ -58,6 +122,13 @@ form {
     outline: none;
     border-color: rgba(75, 213, 137, 0.5);
     box-shadow: 0px 0px 5px rgba(75, 213, 137, 0.5);
+}
+.log_cuerpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que ocupe toda la pantalla */
+    flex-direction: column;
 }
 
 /*Estilo de prelogin*/
@@ -95,8 +166,6 @@ margin-top: 50px;
 }
 .registro_titulo{
     color: #333;
-    font-size: 30px;
-    margin-left: 140px;
 }
 .registro_cuerpo input:focus {
     outline: none;
@@ -115,3 +184,25 @@ margin-top: 50px;
     border-radius: 5px;
     background-color: rgba(75, 213, 137, 0.5);
 }
+/* Estilos para los enlaces ocultos */
+.menu {
+    position: relative;
+    display: inline-block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(75, 213, 137);
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.menu:hover .submenu {
+    display: block;
+}
+
+
+

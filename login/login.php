@@ -17,9 +17,10 @@
     <link rel="icon" type="image/x-icon" href="">
 </head>
     <body>
-            <h1 class="log_titulo">Iniciar sesion</h1>
+            
        
         <div class="log_cuerpo">
+        <h1 class="log_titulo">Iniciar sesion</h1>
             <form action="autenticacion.php" method="post">
                 <input type="hidden" name="admin" value ="<?php echo $_GET['admin'] ?>">
 
