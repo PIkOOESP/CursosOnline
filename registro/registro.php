@@ -17,7 +17,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../estilo/estilos.css">
         <link rel="icon" type="image/x-icon" href="">
-        <script src="registro.js"></script>
+        <script src="../script/registro.js"></script>
         <title>Registro</title>
     </head>
 
@@ -29,7 +29,7 @@
                 <input type="hidden" name="admin" value="<?php echo $_GET['admin']; ?>">
 
                 <?php  
-                
+
                     if($error == 0){ 
                         echo"<p>Correo ya registrado, pruebe otro o <a href='../login/login.php?admin=".$_GET['admin']."'>inicie sesion</a></p>";
                     } else if($error == 1){

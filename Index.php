@@ -9,7 +9,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilo/carrusel.css">
-        <script src="carrusel.js"></script>
+        <script src="script/carrusel.js"></script>
         <link rel="icon" type="image/x-icon" href="">
         <title>Inicio</title>
     </head>

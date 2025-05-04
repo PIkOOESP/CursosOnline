@@ -37,7 +37,7 @@
                 <br/><br/>
 
                 <label for="password">
-                    <img class="log_password" src="img/password.jpg">
+                    <img class="log_password" src="../imagenes/password.jpg">
                 </label>
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="" required>
                 
@@ -45,10 +45,6 @@
                 
                 <p>¿Aun no tienes cuenta? <a href="../registro/registro.php?admin=<?php echo $_GET['admin']; ?>">Registrate aqui</a></p>
             </form>
-        </div>
-
-        <div class="log_registro">
-            
         </div>
     </body>
 </html>
