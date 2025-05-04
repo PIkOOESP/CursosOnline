@@ -22,49 +22,44 @@
     </head>
 
     <body>
-        
-           
-
         <div class="registro_cuerpo">
-
             <h1 class="registro_titulo">Registrar</h1>
-     
-                <form action="autenticacion.php" method="post" id="formulario">
 
-                    <input type="hidden" name="admin" value="<?php echo $_GET['admin']; ?>">
+            <form action="autenticacion.php" method="post" id="formulario">
+                <input type="hidden" name="admin" value="<?php echo $_GET['admin']; ?>">
 
-                    <?php  
-                        if($error == 0){ 
-                            echo"<p>Correo ya registrado, pruebe otro o <a href='../login/login.php?admin=".$_GET['admin']."'>inicie sesion</a></p>";
-                        } else if($error == 1){
-                            echo"<p>Error al registrar los datos, pruebe otra vez mas tarde</p>";
-                        }
-                            
-                    ?>
+                <?php  
+                
+                    if($error == 0){ 
+                        echo"<p>Correo ya registrado, pruebe otro o <a href='../login/login.php?admin=".$_GET['admin']."'>inicie sesion</a></p>";
+                    } else if($error == 1){
+                        echo"<p>Error al registrar los datos, pruebe otra vez mas tarde</p>";
+                    }
+                        
+                ?>
 
-                    <label for="nombre">Nombre</label>
-                    <input type="text" name="nombre" id="nombre">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
 
-                    <p id=error_nombre></p>
+                <p id=error_nombre></p>
 
-                    <label for="apellido">Apellidos</label>
-                    <input type="text" name="apellido" id="apellido">
+                <label for="apellido">Apellidos</label>
+                <input type="text" name="apellido" id="apellido">
 
-                    <p id=error_apellido></p>
+                <p id=error_apellido></p>
 
-                    <label for="correo">Correo electronico</label>
-                    <input type="email" name="correo" id="correo">
+                <label for="correo">Correo electronico</label>
+                <input type="email" name="correo" id="correo">
 
-                    <p id=error_correo></p>
+                <p id=error_correo></p>
 
-                    <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password">
+                <label for="password">Contraseña</label>
+                <input type="password" name="password" id="password">
 
-                    <p id=error_password></p>
+                <p id=error_password></p>
 
-                    <button type="button" onclick="verificar()">Enviar</button>
-                    
-                </form>
+                <button type="button" onclick="verificar()">Enviar</button>
+            </form>
         </div>
     </body>
 </html>
