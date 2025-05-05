@@ -30,8 +30,9 @@
                     <a href="" class="main-link">Iniciar sesión</a>
 
                     <div class="submenu">
-                        <a href="login/login.php?admin=0">Alumno</a>
-                        <a href="login/login.php?admin=1">Profesor</a>
+                        <img src="imagenes/alumno_icon.png"><a href="login/login.php?admin=0">Alumno</a>
+                        <br/>
+                        <img src="imagenes/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
                     </div>
                 </div>
             </div>    

@@ -166,6 +166,7 @@ form {
     display: none;
     position: absolute;
     top: 100%;
+    width:134px;
     left: 0;
     background: rgba(75, 213, 137);
     padding: 10px;
@@ -176,5 +177,6 @@ form {
     display: block;
 }
 
-
-
+.submenu img{
+    width: 25px;
+}
