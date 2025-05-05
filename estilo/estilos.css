@@ -154,7 +154,7 @@ form {
 .registro_cuerpo button {
     border: 1px solid #cccccc;
     border-radius: 5px;
-    background-color: rgba(75, 213, 137, 0.5);
+    background-color: #4bd58980;
 }
 /* Estilos para los enlaces ocultos */
 .menu {
@@ -168,7 +168,7 @@ form {
     top: 100%;
     width:134px;
     left: 0;
-    background: rgba(75, 213, 137);
+    background: #4bd589;
     padding: 10px;
     border: 1px solid #ccc;
 }
