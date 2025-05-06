@@ -35,27 +35,35 @@
                         if($sesion){
                             echo '<a href="">Cursos activos</a>';
                         }
-                    ?>
-                    
+                    ?>      
                     <a href="">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
                 <?php  
                     if(!$sesion){
-                        echo '<div class="menu">
-                        <a href="" class="main-link">Iniciar sesión</a>
+                        echo '
+                        <div class="menu">
+                            <a href="" class="main-link">Iniciar sesión</a>
 
-                        <div class="submenu">
-                            <img src="imagenes/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>
-                            <br/><br/>
-                            <img src="imagenes/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
-                        </div>
-                    </div>';
+                            <div class="submenu">
+                                <img src="imagenes/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>
+                                <br/><br/>
+                                <img src="imagenes/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
+                            </div>
+                        </div>';
                     } else {
-                        echo "<p>Bienvenido <a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>";
+                        echo "
+                            <div class='menu'>
+                            <p>Bienvenido<a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>
+                            
+                            <div class='submenu'>
+                                <img src=''><a href=''>Editar perfil</a>
+                                <br/><br/>
+                                <img src=''><a href='login/cerrar_sesion.php'>Cerrar sesion</a>
+                            </div>
+                        </div>";
                     }
                 ?>
-                
             </div>    
 
             <div class="contenedor_carrusel">
