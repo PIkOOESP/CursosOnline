@@ -1,7 +1,17 @@
 <!DOCTYPE html>
 
 <?php
+    session_start();
     require('conexion/conexion.php');
+    if(isset($_SESSION['loggedin'])){
+        if($_SESSION['loggedin']){
+            $sesion=true;
+        } else {
+            $sesion=false;
+        }
+    } else {
+        $sesion=false;
+    }
 ?>
 
 <html lang="es">
@@ -21,19 +31,39 @@
                 <div class="top_indice_enlaces">
                     <a href="">Cursos</a>
                     <a href="">Inicio</a>
-                    <a href="">Cursos activos</a>
+                    <?php
+                        if($sesion){
+                            echo '<a href="">Cursos activos</a>';
+                        }
+                    ?>      
                     <a href="">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
+                <?php  
+                    if(!$sesion){
+                        echo '
+                        <div class="menu">
+                            <a href="" class="main-link">Iniciar sesión</a>
 
-                <div class="menu">
-                    <a href="" class="main-link">Iniciar sesión</a>
-
-                    <div class="submenu">
-                        <a href="login/login.php?admin=0">Alumno</a>
-                        <a href="login/login.php?admin=1">Profesor</a>
-                    </div>
-                </div>
+                            <div class="submenu">
+                                <img src="imagenes/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>
+                                <br/><br/>
+                                <img src="imagenes/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
+                            </div>
+                        </div>';
+                    } else {
+                        echo "
+                            <div class='menu'>
+                            <p>Bienvenido<a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>
+                            
+                            <div class='submenu'>
+                                <img src=''><a href=''>Editar perfil</a>
+                                <br/><br/>
+                                <img src=''><a href='login/cerrar_sesion.php'>Cerrar sesion</a>
+                            </div>
+                        </div>";
+                    }
+                ?>
             </div>    
 
             <div class="contenedor_carrusel">
