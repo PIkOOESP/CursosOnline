@@ -46,9 +46,9 @@
                             <a href="" class="main-link">Iniciar sesión</a>
 
                             <div class="submenu">
-                                <img src="imagenes/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>
+                                <img src="imagenes/index/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>
                                 <br/><br/>
-                                <img src="imagenes/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
+                                <img src="imagenes/index/profesor_icon.png"><a href="login/login.php?admin=1">Profesor</a>
                             </div>
                         </div>';
                     } else {
@@ -69,16 +69,16 @@
             <div class="contenedor_carrusel">
                 <div class="carrusel" id="carrusel">
                     <div class="objeto_carrusel">
-                        <a href="https://es.wikipedia.org/wiki/Choeropsis_liberiensis"><img src="imagenes/imagen1.jpeg" alt="imagen_carrusel"></a>
+                        <a href="https://es.wikipedia.org/wiki/Choeropsis_liberiensis"><img src="imagenes/carrusel/imagen1.jpeg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://www.reddit.com/r/Aquariums/comments/1gw7d35/anyone_know_what_kind_of_fish_this_is/?tl=es-es"><img src="imagenes/imagen2.jpeg" alt="imagen_carrusel"></a>
+                        <a href="https://www.reddit.com/r/Aquariums/comments/1gw7d35/anyone_know_what_kind_of_fish_this_is/?tl=es-es"><img src="imagenes/carrusel/imagen2.jpeg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://es.wikipedia.org/wiki/Bombyx_mori"><img src="imagenes/imagen3.jpeg" alt="imagen_carrusel"></a>
+                        <a href="https://es.wikipedia.org/wiki/Bombyx_mori"><img src="imagenes/carrusel/imagen3.jpeg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://www.mediotiempo.com/virales/wild-frank-arrollado-avestruz-video-viral-frank-cuesta"><img src="imagenes/imagen4.jpeg" alt="imagen_carrusel"></a>
+                        <a href="https://www.mediotiempo.com/virales/wild-frank-arrollado-avestruz-video-viral-frank-cuesta"><img src="imagenes/carrusel/imagen4.jpeg" alt="imagen_carrusel"></a>
                     </div>
                 </div>
 
