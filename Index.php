@@ -22,7 +22,7 @@
         <link rel="stylesheet" href="estilo/estilos.css">
         <script src="script/carrusel.js"></script>
         <link rel="icon" type="image/x-icon" href="">
-        <title>Inicio</title>
+        <title>Net Runners</title>
     </head>
 
     <body>
@@ -36,7 +36,7 @@
                             echo '<a href="">Cursos activos</a>';
                         }
                     ?>      
-                    <a href="">Cursos</a>
+                    <a href="cursos/cursos.php">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
                 <?php  

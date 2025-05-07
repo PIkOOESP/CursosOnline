@@ -27,7 +27,7 @@
             $_SESSION['loggedin'] = true;
             $_SESSION['name'] = $nombre;
             $_SESSION['id'] = $id;
-            $_SESSION['admin']== $respuesta['admin'];
+            $_SESSION['admin'] = $respuesta['admin'];
 
             header('Location:../index.php');
         } else {

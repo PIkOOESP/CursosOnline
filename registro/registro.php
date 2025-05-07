@@ -18,7 +18,7 @@
         <link rel="stylesheet" href="../estilo/estilos.css">
         <link rel="icon" type="image/x-icon" href="">
         <script src="../script/registro.js"></script>
-        <title>Registro</title>
+        <title>Net Runners</title>
     </head>
 
     <body>
