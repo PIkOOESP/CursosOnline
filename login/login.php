@@ -31,14 +31,14 @@
                 ?>
 
                 <label for="correo">
-                    <img class="log_correo" src="../imagenes/log_correo.jpg" >
+                    <img class="log_correo" src="../imagenes/login/correo.jpg" >
                 </label>
                 <input type="email" name="correo" id="correo" placeholder="Correo electronico" required>
 
                 <br/><br/>
 
                 <label for="password">
-                    <img class="log_password" src="../imagenes/password.jpg">
+                    <img class="log_password" src="../imagenes/login/password.jpg">
                 </label>
                 <input type="password" name="password" id="password" placeholder="Contraseña" class="" required>
                 
