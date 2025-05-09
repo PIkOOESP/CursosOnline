@@ -21,15 +21,15 @@
         <link rel="stylesheet" href="estilo/carrusel.css">
         <link rel="stylesheet" href="estilo/estilos.css">
         <script src="script/carrusel.js"></script>
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="imagenes/logo/netrunners_logo.jpg">
         <title>Net Runners</title>
     </head>
 
     <body>
         <div class="principal_indice">
             <div class="top_indice">
+                <img class="indice_logo" src="imagenes/index/logoVerde.png">
                 <div class="top_indice_enlaces">
-                    <a href="">Cursos</a>
                     <a href="">Inicio</a>
                     <?php
                         if($sesion){
@@ -65,6 +65,16 @@
                     }
                 ?>
             </div>    
+
+            <div class="introduccion_indice">
+                    <h1>Aprende habilidades tecnológicas</h1>
+                    <br/>
+                    <a>Mejora tus habilidades con nuestros cursos online.
+                    Aprende a tu propio ritmo con el apoyo de expertos del sector.</a>
+            </div>
+            <div class="imagen_indice">
+                <img src="imagenes/index/payico_indice.png">
+            </div>
 
             <div class="contenedor_carrusel">
                 <div class="carrusel" id="carrusel">

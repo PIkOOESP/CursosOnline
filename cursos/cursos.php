@@ -2,10 +2,6 @@
     require('../conexion/conexion.php');
 
     session_start();
-
-    if($_SESSION['admin']==1){
-        echo "<a href='registro_curso.php'>Nuevo curso</a>";
-    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -15,6 +11,12 @@
         <title>Net Runner</title>
     </head>
     <body>
-        
+        <?php
+            if(isset($_SESSION['loggedin'])){
+                if($_SESSION['admin']==1){
+                    echo "<a href='registro_curso.php'>Nuevo curso</a>";
+                }
+            }
+        ?>
     </body>
 </html>
