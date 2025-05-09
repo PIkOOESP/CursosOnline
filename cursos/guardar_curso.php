@@ -34,7 +34,7 @@
         if($stmt->num_rows() == 1){
             $stmt->bind_result($id);
             $stmt->fetch();
-            $foto_nombre=$ubicacion.$id.".".$extension;
+            $foto_nombre=$ubicacion.$id.".jpg";
         }
 
         $stmt->close();

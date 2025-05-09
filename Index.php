@@ -28,8 +28,8 @@
     <body>
         <div class="principal_indice">
             <div class="top_indice">
-                <img class="indice_logo" src="imagenes/index/logoVerde.png">
                 <div class="top_indice_enlaces">
+                    <img class="indice_logo" src="imagenes/index/logoVerde.png">
                     <a href="">Inicio</a>
                     <?php
                         if($sesion){

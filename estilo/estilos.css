@@ -27,17 +27,6 @@ body, html {
     border-bottom: 2px solid black;
 }
 
-img.indice_logo{
-    position: relative;
-    width: 95px;
-    bottom: 2px;
-}
-
-.top_indice_enlaces{
-    position: relative;
-    right:675px;
-}
-
 /* Contenedor del carrusel */
 .contenedor_carrusel {
     flex-grow: 1; /* Permite que el contenido ocupe todo el espacio disponible */
@@ -170,6 +159,7 @@ form {
 /* Estilos para los enlaces ocultos */
 .menu {
     position: relative;
+    top: 5px;
     display: inline-block;
 }
 
@@ -177,7 +167,7 @@ form {
     display: none;
     position: absolute;
     top: 100%;
-    width:145px;
+    width:150px;
     left: 0;
     background: #4bd589;
     padding: 10px;
@@ -210,4 +200,9 @@ form {
 .imagen_indice img{
     width: 250px;
     height: 250px;
+}
+
+img.indice_logo{
+    position: relative;
+    width: 80px;
 }
