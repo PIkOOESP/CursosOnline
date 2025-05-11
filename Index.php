@@ -57,9 +57,9 @@
                             <p>Bienvenido<a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>
                             
                             <div class='submenu'>
-                                <img src=''><a href=''>Editar perfil</a>
+                                <a href=''>Editar perfil</a>
                                 <br/><br/>
-                                <img src=''><a href='login/cerrar_sesion.php'>Cerrar sesion</a>
+                                <a href='login/cerrar_sesion.php'>Cerrar sesion</a>
                             </div>
                         </div>";
                     }

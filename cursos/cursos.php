@@ -7,13 +7,9 @@
     $br=0;
 
     if(isset($_SESSION['loggedin'])){
-        if($_SESSION['loggedin']){
-            $sesion=true;
-        } else {
-            $sesion=false;
-        }
+        $sesion=true;
     } else {
-        $sesion=false;
+        header('Location:../login/login.php?admin=0');
     }
 ?>
 <!DOCTYPE html>
@@ -22,7 +18,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../estilo/estilos.css">
-        <link rel="stylesheet" href="../estilo/carrusel.css">
         <link rel="icon" href="../imagenes/logo/netrunners_logo.jpg">
         <title>Net Runner</title>
     </head>
@@ -31,42 +26,21 @@
             <div class="top_indice">
                 <div class="top_indice_enlaces">
                     <img class="indice_logo" src="../imagenes/index/logoVerde.png">
-                    <a href="">Inicio</a>
-                    <?php
-                        if($sesion){
-                            echo '<a href="">Cursos activos</a>';
-                        }
-                    ?>      
-                    <a href="cursos/cursos.php">Cursos</a>
+                    <a href="../Index.php">Inicio</a>
+                    <a href="">Cursos activos</a>
+                    <a href="cursos.php">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
-                <?php  
-                    if(!$sesion){
-                        echo '
-                        <div class="menu">
-                            <a href="" class="main-link">Iniciar sesión</a>
-
-                            <div class="submenu">
-                                <img src="../imagenes/index/estudiante_icon.png"><a href="../login/login.php?admin=0">Alumno</a>
-                                <br/><br/>
-                                <img src="../imagenes/index/profesor_icon.png"><a href="../login/login.php?admin=1">Profesor</a>
-                            </div>
-                        </div>
-                        ';
-                    } else {
-                        echo "
-                            <div class='menu'>
-                            <p>Bienvenido<a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>
-                            
-                            <div class='submenu'>
-                                <img src=''><a href=''>Editar perfil</a>
-                                <br/><br/>
-                                <img src=''><a href='../login/cerrar_sesion.php'>Cerrar sesion</a>
-                            </div>
-                        </div>
-                        ";
-                    }
-                ?>
+                
+                <div class='menu'>
+                    <p>Bienvenido <?php echo$_SESSION['name']?></a></p>
+                    
+                    <div class='submenu'>
+                        <a href=''>Editar perfil</a>
+                        <br/><br/>
+                        <a href='../login/cerrar_sesion.php'>Cerrar sesion</a>
+                    </div>
+                </div>
             </div>
         </div>
         <?php
