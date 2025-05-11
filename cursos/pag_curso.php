@@ -22,6 +22,8 @@
         } else {
             $inscibirse = false;
         }
+    } else {
+        $inscibirse = false;
     }
 ?>
 
@@ -62,7 +64,7 @@
         </div>
 
         <div class="descripcion_curso">
-            <p><?php echo $array_cursos['id'] ?></p>
+            <p><?php echo $array_cursos['descripcion'] ?></p>
         </div>
 
         <?php
@@ -76,7 +78,7 @@
         ?>
 
         <div class="acordeon">
-            
+
         </div>
     </body>
 </html>
