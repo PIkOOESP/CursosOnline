@@ -5,7 +5,7 @@
     $ubicacion = "../imagenes/cursos/";
     $extension=strtolower(pathinfo($ubicacion.basename($_FILES['foto']['name']),PATHINFO_EXTENSION));
 
-    if($extension != "jpg" || $extension = "png" || $extension = "jpeg" || $extension = "webp"){
+    if($extension != "jpg" && $extension != "png" && $extension != "jpeg" && $extension != "webp"){
         header("Location:registro_curso.php?error=1");
     }
 
