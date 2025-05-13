@@ -6,7 +6,6 @@
     $consulta_cursos = "SELECT * from cursos where id=" . $respuesta['id'];
     $query_cursos = $conexion -> query($consulta_cursos);
     $array_cursos = $query_cursos -> fetch_assoc();
-    print_r($array_cursos);
 
     if(!isset($_SESSION['loggedin'])){
         header('Location:../login/login.php');
@@ -17,7 +16,7 @@
         $query_alumno = $conexion -> query($consulta_alumno);
         $array_alumno = $query_alumno -> fetch_assoc();
 
-        if(count($array_alumno) < 0){
+        if($array_alumno == null){
             $inscibirse = true;
         } else {
             $inscibirse = false;
@@ -59,19 +58,18 @@
             </div>
         </div>
 
-        <div class="imagen_principal_curso">
+        <div class="pag_curso">
             <img src="../imagenes/cursos/<?php echo $array_cursos['id'] ?>.jpg" >
-        </div>
 
-        <div class="descripcion_curso">
-            <p><?php echo $array_cursos['descripcion'] ?></p>
+            <div class="descripcion_curso">
+                <p><?php echo $array_cursos['descripcion'] ?></p>
+            </div>
         </div>
-
         <?php
             if($inscibirse){
                 echo"
                 <div class='boton_inscripcion_curso'>
-                    <a href='inscripcion.php'>Inscribirse</a>
+                    <a href='inscripcion.php?id".$array_cursos['id']."'>Inscribirse</a>
                 </div>
                 ";
             }

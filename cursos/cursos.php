@@ -50,10 +50,16 @@
                     ";
                 }
             }
+        ?>
 
+        <table>
+            <tr>
+        <?php
             while($fila=$query->fetch_assoc()){
                 $br++;
+                echo $br;
                 echo"
+                <td>
                 <div class='curso'>
                     <a href='pag_curso.php?id=".$fila['id']."'>
                         <div class='curso_imagen'>
@@ -63,12 +69,15 @@
                         <p>".$fila['nombre']."</p>
                         </div>
                     </a>
-                </div>";
-                if($br/3==0){
-                    echo "<br/>";
+                </div>
+                </td>";
+                if($br%3==0){
+                    echo "</tr><tr>";
                 }
             }
         ?>
+            </tr>
+        </table>
 
         <div class="bottom_indice">
             <div class="bottom_indice_enlaces">

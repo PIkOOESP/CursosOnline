@@ -212,3 +212,35 @@ img.indice_logo{
     position: relative;
     width: 80px;
 }
+
+.curso{
+    margin-top: 50px;
+    margin-left: 80px;
+    margin-bottom: 50px;
+    height: 400px;
+    width: 400px;
+    border: solid 2px black;
+}
+.curso img{
+    height: 200px;
+    width: 200px;
+}
+
+.pag_curso{
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-bottom: 50px;
+    height: 400px;
+    width: 1300px;  
+}
+
+.pag_curso img{
+    height: 400px;
+    width: 500px;
+}
+
+.descripcion_curso{
+    float: right;
+    margin-right: 40%;
+    margin-top: 20px;
+}

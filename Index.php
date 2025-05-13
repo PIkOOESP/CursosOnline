@@ -54,7 +54,7 @@
                     } else {
                         echo "
                             <div class='menu'>
-                            <p>Bienvenido<a href='login/cerrar_sesion.php'>".$_SESSION['name']."</a></p>
+                            <p>Bienvenido ".$_SESSION['name']."</p>
                             
                             <div class='submenu'>
                                 <a href=''>Editar perfil</a>
