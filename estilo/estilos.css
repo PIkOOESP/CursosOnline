@@ -187,6 +187,7 @@ form {
 .submenu img{
     width: 25px;
 }
+
 .introduccion_indice{
     height: 200px;
     width: 50%;
@@ -203,6 +204,7 @@ form {
     margin-left: 70%;
     margin-top: -280px;
 }
+
 .imagen_indice img{
     width: 250px;
     height: 250px;
@@ -219,11 +221,20 @@ img.indice_logo{
     margin-bottom: 50px;
     height: 400px;
     width: 400px;
-    border: solid 2px black;
+    border-radius: 5px;
+    box-shadow:0px 0px 5px rgb(85, 83, 83);;
 }
+
 .curso img{
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 400px;
+    border-radius: 5px;
+}
+
+.curso_nombre{
+    margin-top: 10px;
+    color: black;
+    text-decoration: none;
 }
 
 .pag_curso{
@@ -241,6 +252,21 @@ img.indice_logo{
 
 .descripcion_curso{
     float: right;
-    margin-right: 40%;
     margin-top: 20px;
+    width: 550px;
+    margin-right: 200px;
+}
+
+.boton_inscripcion_curso{
+    margin-left: 100px;
+    margin-bottom: 50px;
+}
+
+.horas{
+    margin-top: 50px;
+}
+
+.boton_baja_curso{
+    margin-left: 100px;
+    margin-bottom: 50px;
 }

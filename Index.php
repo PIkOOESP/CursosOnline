@@ -33,7 +33,7 @@
                     <a href="">Inicio</a>
                     <?php
                         if($sesion){
-                            echo '<a href="cursos.php?curso=1">Cursos activos</a>';
+                            echo '<a href="cursos/cursos.php?curso=1">Cursos activos</a>';
                         }
                     ?>      
                     <a href="cursos/cursos.php">Cursos</a>

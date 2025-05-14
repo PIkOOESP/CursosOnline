@@ -29,9 +29,9 @@
         $array_profesor = $query_profesor -> fetch_assoc();
 
         if($array_profesor == null){
-            $editar = true;
+            $asignar = true;
         } else {
-            $editar = false;
+            $asignar = false;
         }
     }
 ?>
@@ -73,7 +73,9 @@
 
             <div class="descripcion_curso">
                 <p><?php echo $array_cursos['descripcion'] ?></p>
-                <p>-<?php echo$array_cursos['horas'] ?> horas lectivas</p>
+                <div class="horas">
+                    <p>- <?php echo$array_cursos['horas'] ?> horas lectivas</p>
+                </div>
             </div>
         </div>
         <?php
@@ -93,7 +95,7 @@
                 }
             }
 
-            if(isset($editar)){
+            if(isset($asignar)){
                 if($editar){
                     echo"
                     <div class='boton_inscripcion_curso'>
