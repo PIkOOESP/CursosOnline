@@ -1,16 +1,24 @@
 <?php
-    require('../conexion/conexion.php');
-
     session_start();
-    $consulta_cursos="SELECT id, nombre from cursos";
-    $query = $conexion->query($consulta_cursos);
-    $br=0;
-
-    if(isset($_SESSION['loggedin'])){
-        $sesion=true;
-    } else {
+    if(!isset($_SESSION['loggedin'])){
         header('Location:../login/login.php?admin=0');
     }
+
+    require('../conexion/conexion.php');
+    $respuesta = $_GET;
+
+    $consulta_cursos="SELECT id, nombre from cursos";
+    if(isset($respuesta['curso'])){
+        if($_SESSION['admin'] == 0){
+            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id from inscripciones i join cursos c on c.id=i.curso_id where i.alumno_id=".$_SESSION['id'];
+        }
+
+        if($_SESSION['admin'] == 1){
+            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id from cursos_profesores p join cursos c on c.id=p.curso_id where p.profesor_id=".$_SESSION['id'];
+        }
+    }
+    $query = $conexion->query($consulta_cursos);
+    $tr=0;
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -27,13 +35,13 @@
                 <div class="top_indice_enlaces">
                     <img class="indice_logo" src="../imagenes/index/logoVerde.png">
                     <a href="../Index.php">Inicio</a>
-                    <a href="">Cursos activos</a>
+                    <a href="cursos.php?curso=1">Cursos activos</a>
                     <a href="cursos.php">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
                 
                 <div class='menu'>
-                    <p>Bienvenido <?php echo$_SESSION['name']?></a></p>
+                    <p>Bienvenido <?php echo $_SESSION['name']?></a></p>
                     
                     <div class='submenu'>
                         <a href=''>Editar perfil</a>
@@ -56,8 +64,7 @@
             <tr>
         <?php
             while($fila=$query->fetch_assoc()){
-                $br++;
-                echo $br;
+                $tr++;
                 echo"
                 <td>
                 <div class='curso'>
@@ -71,7 +78,7 @@
                     </a>
                 </div>
                 </td>";
-                if($br%3==0){
+                if($tr%3==0){
                     echo "</tr><tr>";
                 }
             }

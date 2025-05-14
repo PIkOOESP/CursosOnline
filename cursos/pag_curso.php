@@ -8,7 +8,7 @@
     $array_cursos = $query_cursos -> fetch_assoc();
 
     if(!isset($_SESSION['loggedin'])){
-        header('Location:../login/login.php');
+        header('Location:../login/login.php?admin=0');
     }
         
     if($_SESSION['admin'] == 0){
@@ -21,8 +21,18 @@
         } else {
             $inscibirse = false;
         }
-    } else {
-        $inscibirse = false;
+    } 
+
+    if($_SESSION['admin'] == 1){
+        $consulta_profesor="SELECT * from cursos_profesores where profesor_id=".$_SESSION['id']." and curso_id=".$respuesta['id'];
+        $query_profesor = $conexion -> query($consulta_profesor);
+        $array_profesor = $query_profesor -> fetch_assoc();
+
+        if($array_profesor == null){
+            $editar = true;
+        } else {
+            $editar = false;
+        }
     }
 ?>
 
@@ -41,7 +51,7 @@
                 <div class="top_indice_enlaces">
                     <img class="indice_logo" src="../imagenes/index/logoVerde.png">
                     <a href="../Index.php">Inicio</a>
-                    <a href="">Cursos activos</a>
+                    <a href="cursos.php?curso=1">Cursos activos</a>
                     <a href="cursos.php">Cursos</a>
                     <a href="">MasterClass</a>
                 </div>
@@ -63,20 +73,59 @@
 
             <div class="descripcion_curso">
                 <p><?php echo $array_cursos['descripcion'] ?></p>
+                <p>-<?php echo$array_cursos['horas'] ?> horas lectivas</p>
             </div>
         </div>
         <?php
-            if($inscibirse){
-                echo"
-                <div class='boton_inscripcion_curso'>
-                    <a href='inscripcion.php?id".$array_cursos['id']."'>Inscribirse</a>
-                </div>
-                ";
+            if(isset($inscibirse)){
+                if($inscibirse){
+                    echo"
+                    <div class='boton_inscripcion_curso'>
+                        <a href='inscripcion.php?id=".$array_cursos['id']."'>Inscribirse</a>
+                    </div>
+                    ";
+                } else {
+                    echo"
+                    <div class='boton_baja_curso'>
+                        <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
+                    </div>
+                    ";
+                }
+            }
+
+            if(isset($editar)){
+                if($editar){
+                    echo"
+                    <div class='boton_inscripcion_curso'>
+                        <a href='inscripcion.php?id=".$array_cursos['id']."'>Asignar</a>
+                    </div>
+                    ";
+                } else {
+                    echo"
+                    <div class='boton_baja_curso'>
+                        <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
+                    </div>
+                    ";
+                }
             }
         ?>
 
         <div class="acordeon">
 
+        </div>
+
+        <div class="bottom_indice">
+            <div class="bottom_indice_enlaces">
+
+            </div>
+
+            <div class="bottom_indice_informacion">
+
+            </div>
+
+            <div class="bottom_indice_referencias">
+                <p>Pablo | Miguel Angel</p>
+            </div>
         </div>
     </body>
 </html>
