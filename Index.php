@@ -79,16 +79,16 @@
             <div class="contenedor_carrusel">
                 <div class="carrusel" id="carrusel">
                     <div class="objeto_carrusel">
-                        <a href="https://es.wikipedia.org/wiki/Choeropsis_liberiensis"><img src="imagenes/carrusel/imagen1.jpeg" alt="imagen_carrusel"></a>
+                        <a href="cursos/pag_curso.php?id=6"><img src="imagenes/carrusel/imagen3.jpg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://www.reddit.com/r/Aquariums/comments/1gw7d35/anyone_know_what_kind_of_fish_this_is/?tl=es-es"><img src="imagenes/carrusel/imagen2.jpeg" alt="imagen_carrusel"></a>
+                        <a href="cursos/pag_curso.php?id=2"><img src="imagenes/carrusel/imagen2.jpg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://es.wikipedia.org/wiki/Bombyx_mori"><img src="imagenes/carrusel/imagen3.jpeg" alt="imagen_carrusel"></a>
+                        <a href="cursos/pag_curso.php?id=1"><img src="imagenes/carrusel/imagen1.jpg" alt="imagen_carrusel"></a>
                     </div>
                     <div class="objeto_carrusel">
-                        <a href="https://www.mediotiempo.com/virales/wild-frank-arrollado-avestruz-video-viral-frank-cuesta"><img src="imagenes/carrusel/imagen4.jpeg" alt="imagen_carrusel"></a>
+                        <a href="cursos/pag_curso.php?id=7"><img src="imagenes/carrusel/imagen4.jpg" alt="imagen_carrusel"></a>
                     </div>
                 </div>
 

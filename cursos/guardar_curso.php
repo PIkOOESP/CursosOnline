@@ -9,13 +9,13 @@
         header("Location:registro_curso.php?error=1");
     }
 
-    if($stmt=$conexion->prepare("SELECT * from cursos where nombre = ? and dificultad = ?")){
+    if($stmt=$conexion->prepare("SELECT * from cursos where nombre = ? and dificultad_id = ?")){
         $stmt->bind_param("si",$respuesta['nombre'],$respuesta['dificultad']);
         $stmt->execute();
     }
 
     if($stmt->num_rows() <= 0){
-        $insercion = "INSERT into cursos(nombre,descripcion,horas,dificultad) values ('".$respuesta['nombre']."','".$respuesta['descripcion']."',".$respuesta['horas'].",".$respuesta['dificultad'].");";
+        $insercion = "INSERT into cursos(nombre,descripcion,horas,dificultad_id) values ('".$respuesta['nombre']."','".$respuesta['descripcion']."',".$respuesta['horas'].",".$respuesta['dificultad'].");";
         print_r($insercion);
     } else {
         header('Location:registro_curso.php?error=0');
@@ -24,7 +24,7 @@
     $stmt->close();
 
     if($error = $conexion->query($insercion)){
-        if($stmt=$conexion->prepare("SELECT id from cursos where nombre = ? and dificultad = ?")){
+        if($stmt=$conexion->prepare("SELECT id from cursos where nombre = ? and dificultad_id = ?")){
             $stmt->bind_param("si",$respuesta['nombre'],$respuesta['dificultad']);
             $stmt->execute();
         }

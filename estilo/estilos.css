@@ -223,6 +223,12 @@ img.indice_logo{
     width: 400px;
     border-radius: 5px;
     box-shadow:0px 0px 5px rgb(85, 83, 83);;
+    text-align: center;
+}
+
+.curso a{
+    color: black;
+    text-decoration: none;
 }
 
 .curso img{
@@ -233,8 +239,6 @@ img.indice_logo{
 
 .curso_nombre{
     margin-top: 10px;
-    color: black;
-    text-decoration: none;
 }
 
 .pag_curso{

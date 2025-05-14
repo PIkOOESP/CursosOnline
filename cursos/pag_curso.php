@@ -76,41 +76,43 @@
                 <div class="horas">
                     <p>- <?php echo$array_cursos['horas'] ?> horas lectivas</p>
                 </div>
+                <div class="boton_curso">
+                    <?php
+                        if(isset($inscibirse)){
+                            if($inscibirse){
+                                echo"
+                                <div class='boton_inscripcion_curso'>
+                                    <a href='inscripcion.php?id=".$array_cursos['id']."'>Inscribirse</a>
+                                </div>
+                                ";
+                            } else {
+                                echo"
+                                <div class='boton_baja_curso'>
+                                    <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
+                                </div>
+                                ";
+                            }
+                        }
+
+                        if(isset($asignar)){
+                            if($asignar){
+                                echo"
+                                <div class='boton_inscripcion_curso'>
+                                    <a href='inscripcion.php?id=".$array_cursos['id']."'>Asignar</a>
+                                </div>
+                                ";
+                            } else {
+                                echo"
+                                <div class='boton_baja_curso'>
+                                    <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
+                                </div>
+                                ";
+                            }
+                        }
+                    ?>
+                </div>
             </div>
         </div>
-        <?php
-            if(isset($inscibirse)){
-                if($inscibirse){
-                    echo"
-                    <div class='boton_inscripcion_curso'>
-                        <a href='inscripcion.php?id=".$array_cursos['id']."'>Inscribirse</a>
-                    </div>
-                    ";
-                } else {
-                    echo"
-                    <div class='boton_baja_curso'>
-                        <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
-                    </div>
-                    ";
-                }
-            }
-
-            if(isset($asignar)){
-                if($editar){
-                    echo"
-                    <div class='boton_inscripcion_curso'>
-                        <a href='inscripcion.php?id=".$array_cursos['id']."'>Asignar</a>
-                    </div>
-                    ";
-                } else {
-                    echo"
-                    <div class='boton_baja_curso'>
-                        <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
-                    </div>
-                    ";
-                }
-            }
-        ?>
 
         <div class="acordeon">
 
