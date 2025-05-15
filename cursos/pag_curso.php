@@ -12,6 +12,7 @@
     }
         
     if($_SESSION['admin'] == 0){
+        $editar=false;
         $consulta_alumno="SELECT * from inscripciones where alumno_id=".$_SESSION['id']." and curso_id=".$respuesta['id'];
         $query_alumno = $conexion -> query($consulta_alumno);
         $array_alumno = $query_alumno -> fetch_assoc();
@@ -24,6 +25,7 @@
     } 
 
     if($_SESSION['admin'] == 1){
+        $editar=true;
         $consulta_profesor="SELECT * from cursos_profesores where profesor_id=".$_SESSION['id']." and curso_id=".$respuesta['id'];
         $query_profesor = $conexion -> query($consulta_profesor);
         $array_profesor = $query_profesor -> fetch_assoc();
@@ -42,7 +44,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../estilo/estilos.css">
-        <link rel="icon" type="image/x-icon" href="">
+        <link rel="icon" type="image/x-icon" href="../imagenes/logo/netrunners_logo.jpg">
         <title>Net Runners</title>
     </head>
     <body>
@@ -76,8 +78,23 @@
                 <div class="horas">
                     <p>- <?php echo$array_cursos['horas'] ?> horas lectivas</p>
                 </div>
-                <div class="boton_curso">
+                <div class="botones_curso">
                     <?php
+                        if($editar){
+                            echo"
+                            <div class='boton_editar_curso'>
+                                <a href='registro_curso.php?id=".$array_cursos['id']."'>Editar</a>
+                            </div>
+
+                            <div class='boton_borrar_curso'>
+                                <a href='borrar_curso.php?id=".$array_cursos['id']."'>Borrar</a>
+                            </div>
+
+                            <div class='boton_nueva_leccion'>
+                                <a href='lecciones/registro_leccion.php?id='".$array_cursos['id']."'>Nueva leccion</a>
+                            </div>
+                            ";
+                        }
                         if(isset($inscibirse)){
                             if($inscibirse){
                                 echo"

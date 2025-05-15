@@ -1,0 +1,53 @@
+<?php
+    session_start();
+    $respuesta=$_GET;
+    if(!isset($_SESSION['loggedin'])){
+        header('Location:../../login/login.php?admin=0');
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../estilo/estilos.css">
+        <link rel="icon" type="image/x-icon" href="../../imagenes/logo/netrunners_logo.jpg">
+        <title>Net Runners</title>
+    </head>
+    <body>
+        <div class="registro_cuerpo">
+            <h1 class="registro_titulo">Nueva leccion</h1>
+
+            <form action="guardar_registro.php" method="post">
+                <input type="hidden" name="curso_id" id="curso_id" value="<?php echo $respuesta['id'] ?>">
+
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+
+                <br/><br/>
+
+                <label for="descripcion">Descripcion</label>
+                <br/>
+                <textarea name="descripcion" id="descripcion" rows="3" cols="30" maxlength="300"></textarea>
+
+                <br/><br/>
+
+                <label for="contenido">Contenido</label>
+                <textarea name="contenido" id="contenido" rows="4" cols="40"></textarea>
+
+                <label for="tiempo">Tiempo medio</label>
+                <input type="number" name="tiempo" id="tiempo">
+
+                <br/>
+
+                <label for="numero">Numero de lección</label>
+                <input type="text" name="numero" id="numero">
+
+                <input type="file" name="video" id="video">
+
+                <input class="boton" type="submit" value="Enviar">
+            </form>
+        </div>
+    </body>
+</html>

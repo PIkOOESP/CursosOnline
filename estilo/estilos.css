@@ -74,16 +74,18 @@ form {
 }
 
 /* Botones */
-.registro_cuerpo button, .log_cuerpo input.boton {
+input.boton {
     background-color: rgba(75, 213, 137, 0.7);
     border: 1px solid #4bd589;
     border-radius: 5px;
     padding: 10px;
     font-weight: bold;
     cursor: pointer;
+    width: 80%;
+    font-size: 16px;
 }
 
-.registro_cuerpo button:hover, .log_cuerpo input.boton:hover {
+input.boton:hover {
     background-color: rgba(75, 213, 137, 1);
     box-shadow: 0px 0px 5px rgba(75, 213, 137, 0.7);
 }
@@ -118,9 +120,6 @@ form {
     border-radius: 5px;
     font-size: 16px;
     margin-bottom: 10px;
-}
-.log_cuerpo input.boton{
-    background-color: rgba(75, 213, 137, 0.5);
 }
 
 /* Efectos interactivos */
