@@ -7,7 +7,6 @@
     require('../conexion/conexion.php');
     $consulta="SELECT id, nombre from clases_maestras";
     $query = $conexion->query($consulta);
-    $array = $query -> fetch_assoc();
     $tr=0;
 ?>
 <!DOCTYPE html>
@@ -25,8 +24,8 @@
                 <div class="top_indice_enlaces">
                     <img class="indice_logo" src="../imagenes/index/logoVerde.png">
                     <a href="../Index.php">Inicio</a>
-                    <a href="cursos.php?curso=1">Cursos activos</a>
-                    <a href="cursos.php">Cursos</a>
+                    <a href="../cursos/cursos.php?curso=1">Cursos activos</a>
+                    <a href="../cursos/cursos.php">Cursos</a>
                     <a href="">MasterClass</a>
                     <?php
                         if($_SESSION['admin']==1){
@@ -58,7 +57,7 @@
                         <div class='curso'>
                             <a href='pag_master.php?id=".$fila['id']."'>
                                 <div class='master_imagen'>
-                                    <img src='../imagenes/master/".$fila['id'].".jpg'>
+                                    <img src='../imagenes/master/portadas/".$fila['id'].".jpg'>
                                 </div>
                                 <div class='master_nombre'>
                                 <p>".$fila['nombre']."</p>

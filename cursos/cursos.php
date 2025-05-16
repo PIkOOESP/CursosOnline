@@ -7,14 +7,14 @@
     require('../conexion/conexion.php');
     $respuesta = $_GET;
 
-    $consulta_cursos="SELECT c.id, c.nombre, d.nombre as dificultad from cursos c join dificultades d on d.id=c.dificultad_id";
+    $consulta_cursos="SELECT c.id as id, c.nombre as nombre, d.nombre as dificultad from cursos c join dificultades d on d.id=c.dificultad_id";
     if(isset($respuesta['curso'])){
         if($_SESSION['admin'] == 0){
-            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id from inscripciones i join cursos c on c.id=i.curso_id where i.alumno_id=".$_SESSION['id'];
+            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id, d.nombre as dificultad from inscripciones i join cursos c on c.id=i.curso_id join dificultades d on d.id=c.dificultad_id where i.alumno_id=".$_SESSION['id'];
         }
 
         if($_SESSION['admin'] == 1){
-            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id from cursos_profesores p join cursos c on c.id=p.curso_id where p.profesor_id=".$_SESSION['id'];
+            $consulta_cursos = "SELECT c.nombre as nombre, c.id as id, d.nombre as dificultad from cursos_profesores p join cursos c on c.id=p.curso_id join dificultades d on d.id=c.dificultad_id where p.profesor_id=".$_SESSION['id'];
         }
     }
     $query = $conexion->query($consulta_cursos);
@@ -37,7 +37,7 @@
                     <a href="../Index.php">Inicio</a>
                     <a href="cursos.php?curso=1">Cursos activos</a>
                     <a href="cursos.php">Cursos</a>
-                    <a href="masterclass.php">MasterClass</a>
+                    <a href="../masterclass/masterclass.php">MasterClass</a>
                     <?php
                         if($_SESSION['admin']==1){
                             echo "<a href='registro_curso.php'>Nuevo curso</a>

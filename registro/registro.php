@@ -58,7 +58,7 @@
 
                 <p id=error_password></p>
 
-                <button type="button" onclick="verificar()">Enviar</button>
+                <input class="boton" type="button" onclick="verificar()" value="Entrar">
             </form>
         </div>
     </body>

@@ -2,15 +2,21 @@
     session_start();
     require("../conexion/conexion.php");
     $respuesta = $_GET;
-
+    if(!isset($_SESSION['loggedin'])){
+        header('Location:../login/login.php?admin=0');
+    }
     $consulta_cursos = "SELECT * from cursos where id=" . $respuesta['id'];
     $query_cursos = $conexion -> query($consulta_cursos);
     $array_cursos = $query_cursos -> fetch_assoc();
 
-    if(!isset($_SESSION['loggedin'])){
-        header('Location:../login/login.php?admin=0');
+    if($array_cursos == null){
+        header('Location:cursos.php');
     }
-        
+
+    $consulta_lecciones="SELECT nombre, id, num_leccion from lecciones where curso_id=".$respuesta['id']." order by num_leccion asc";
+    $query_lecciones = $conexion -> query($consulta_lecciones);
+    
+
     if($_SESSION['admin'] == 0){
         $editar=false;
         $consulta_alumno="SELECT * from inscripciones where alumno_id=".$_SESSION['id']." and curso_id=".$respuesta['id'];
@@ -42,9 +48,20 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../estilo/estilos.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
         <link rel="icon" type="image/x-icon" href="../imagenes/logo/netrunners_logo.jpg">
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+        <script>
+            $( function() {
+                $( "#accordion" ).accordion({
+                    collapsible: true,
+                    heightStyle: "content"
+                });
+            } );
+        </script>
+        <link rel="stylesheet" href="../estilo/estilos.css">
         <title>Net Runners</title>
     </head>
     <body>
@@ -55,7 +72,7 @@
                     <a href="../Index.php">Inicio</a>
                     <a href="cursos.php?curso=1">Cursos activos</a>
                     <a href="cursos.php">Cursos</a>
-                    <a href="">MasterClass</a>
+                    <a href="../masterclass/masterclass.php">MasterClass</a>
                 </div>
                 
                 <div class='menu'>
@@ -74,39 +91,50 @@
             <img src="../imagenes/cursos/<?php echo $array_cursos['id'] ?>.jpg" >
 
             <div class="descripcion_curso">
+                <h1>Descripción</h1>
+                </br>
                 <p><?php echo $array_cursos['descripcion'] ?></p>
                 <div class="horas">
                     <p>- <?php echo$array_cursos['horas'] ?> horas lectivas</p>
                 </div>
                 <div class="botones_curso">
+                    <table class="botones_curso_tabla">
                     <?php
                         if($editar){
                             echo"
+                            <td>
                             <div class='boton_editar_curso'>
                                 <a href='registro_curso.php?id=".$array_cursos['id']."'>Editar</a>
                             </div>
-
+                            </td>
+                            <td>
                             <div class='boton_borrar_curso'>
                                 <a href='borrar_curso.php?id=".$array_cursos['id']."'>Borrar</a>
                             </div>
-
+                            </td>
+                            <td>
                             <div class='boton_nueva_leccion'>
-                                <a href='lecciones/registro_leccion.php?id='".$array_cursos['id']."'>Nueva leccion</a>
+                                <a href='lecciones/registro_leccion.php?id=".$array_cursos['id']."'>Nueva leccion</a>
                             </div>
+                            </td>
                             ";
                         }
                         if(isset($inscibirse)){
                             if($inscibirse){
                                 echo"
+                                <td>
                                 <div class='boton_inscripcion_curso'>
                                     <a href='inscripcion.php?id=".$array_cursos['id']."'>Inscribirse</a>
                                 </div>
+                                </td>
                                 ";
                             } else {
                                 echo"
+                                <td>
                                 <div class='boton_baja_curso'>
                                     <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
                                 </div>
+                                </td>
                                 ";
                             }
                         }
@@ -114,24 +142,40 @@
                         if(isset($asignar)){
                             if($asignar){
                                 echo"
+                                <td>
                                 <div class='boton_inscripcion_curso'>
                                     <a href='inscripcion.php?id=".$array_cursos['id']."'>Asignar</a>
                                 </div>
+                                </td>
                                 ";
                             } else {
                                 echo"
+                                <td>
                                 <div class='boton_baja_curso'>
                                     <a href='baja.php?id=".$array_cursos['id']."'>Dar de baja</a>
                                 </div>
+                                </td>
                                 ";
                             }
                         }
                     ?>
+                    </table>
                 </div>
             </div>
         </div>
 
         <div class="acordeon">
+         
+            <div id="accordion">
+                <?php
+                    while($fila= $query_lecciones -> fetch_assoc()){
+                        echo"
+                        <h3>".$fila['num_leccion']."º Leccion</h3>
+                        <div><a href='lecciones/pag_leccion.php?id=".$fila['id']."&curso_id=".$array_cursos['id']."'>".$fila['nombre']."</a></div>  
+                        ";
+                    }
+                ?>
+            </div>
 
         </div>
 

@@ -4,6 +4,12 @@
     if(!isset($_SESSION['loggedin'])){
         header('Location:../../login/login.php?admin=0');
     }
+
+    if(isset($_GET['error'])){
+        $error = $_GET['error'];
+    } else {
+        $error=-1;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +25,7 @@
         <div class="registro_cuerpo">
             <h1 class="registro_titulo">Nueva leccion</h1>
 
-            <form action="guardar_registro.php" method="post">
+            <form action="guardar_leccion.php" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="curso_id" id="curso_id" value="<?php echo $respuesta['id'] ?>">
 
                 <label for="nombre">Nombre</label>
@@ -45,6 +51,16 @@
                 <input type="text" name="numero" id="numero">
 
                 <input type="file" name="video" id="video">
+
+                <?php
+                    if($error==0){
+                        echo '<p>La leccion ya esta registrada</p>';
+                    } else if($error==1){
+                        echo '<p>Error al subir el video</p>';
+                    } else if($error==2){
+                        echo '<p>Solo se admiten videos en mp4</p>';
+                    }
+                ?>
 
                 <input class="boton" type="submit" value="Enviar">
             </form>

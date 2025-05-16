@@ -22,7 +22,7 @@ body, html {
 
 /* Header fijo */
 .top_indice {
-    position: fixed;
+    position: fixed absolute;
     top: 0;
     width: 100%;
     background-color: #4bd589;
@@ -70,7 +70,7 @@ form {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 400px;
-    max-height: 400px;
+    max-height: 600px;
 }
 
 /* Botones */
@@ -260,16 +260,82 @@ img.indice_logo{
     margin-right: 200px;
 }
 
-.boton_inscripcion_curso{
-    margin-left: 100px;
-    margin-bottom: 50px;
-}
-
 .horas{
     margin-top: 50px;
 }
 
-.boton_baja_curso{
-    margin-left: 100px;
-    margin-bottom: 50px;
+.boton_inscripcion_curso a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.boton_baja_curso a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.boton_editar_curso a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton_borrar_curso a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.boton_nueva_leccion a{
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+.botones_curso_tabla{
+    margin-top: 80px;
+}
+.botones_curso div{
+    margin-left: 10px;
+}
+
+/*Colores acordeon*/
+
+.ui-state-active {
+    border: 1px solid #36a769;
+	background: #4bd589;
+}
+
+.ui-state-hover{
+    border: 1px solid #abefca;
+	background: #abefca;
 }

@@ -1,6 +1,9 @@
 <?php
     require("../conexion/conexion.php");
     session_start();
+    if(!isset($_SESSION['loggedin'])){
+        header('Location:../login/login.php?admin=0');
+    }
     $respuesta = $_POST;
     if(isset($respuesta['id'])){
         $insercion = "UPDATE cursos set nombre='" . $respuesta['nombre'] . "', descripcion='" . $respuesta['descripcion'] . "', horas=".$respuesta['horas'] . ", dificultad_id=".$respuesta['dificultad'] . " where id=".$respuesta['id'] ;
@@ -24,14 +27,13 @@
 
         if($stmt->num_rows() <= 0){
             $insercion = "INSERT into cursos(nombre,descripcion,horas,dificultad_id) values ('".$respuesta['nombre']."','".$respuesta['descripcion']."',".$respuesta['horas'].",".$respuesta['dificultad'].");";
-            print_r($insercion);
         } else {
             header('Location:registro_curso.php?error=0');
         }
 
         $stmt->close();
 
-        if($error = $conexion->query($insercion)){
+        if($query = $conexion->query($insercion)){
             if($stmt=$conexion->prepare("SELECT id from cursos where nombre = ? and dificultad_id = ?")){
                 $stmt->bind_param("si",$respuesta['nombre'],$respuesta['dificultad']);
                 $stmt->execute();
@@ -49,6 +51,9 @@
 
             if (move_uploaded_file($_FILES["foto"]["tmp_name"], $foto_nombre)) {
                 header("Location:cursos.php");
+            } else  {
+                $conexion -> query("DELETE from cursos where curso_id=".$id);
+                header("Location:registro_curso.php?error=1");
             }
         }
     }

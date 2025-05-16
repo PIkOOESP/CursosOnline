@@ -16,5 +16,7 @@
     
     if($query=$conexion->query($insercion)){
         header('Location:pag_curso.php?id='.$respuesta['id']);
+    }else{
+        header('Location:../index.php');
     }
 ?>

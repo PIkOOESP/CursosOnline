@@ -37,7 +37,7 @@
                         }
                     ?>      
                     <a href="cursos/cursos.php">Cursos</a>
-                    <a href="">MasterClass</a>
+                    <a href="masterclass/masterclass.php">MasterClass</a>
                 </div>
                 <?php  
                     if(!$sesion){
