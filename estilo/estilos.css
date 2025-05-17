@@ -413,3 +413,10 @@ img.indice_logo{
 .nombre_german{
     margin-bottom: 60px;
 }
+
+.bottom_indice_enlaces img{
+    width: 20px;
+    height: 20px;
+    margin-left: 200px;
+    margin-bottom: -20px;
+}
