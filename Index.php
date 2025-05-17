@@ -57,7 +57,7 @@
                             <p>Bienvenido ".$_SESSION['name']."</p>
                             
                             <div class='submenu'>
-                                <a href=''>Editar perfil</a>
+                                <a href='registro/registro.php?admin=".$_SESSION['admin']."'>Editar perfil</a>
                                 <br/><br/>
                                 <a href='login/cerrar_sesion.php'>Cerrar sesion</a>
                             </div>

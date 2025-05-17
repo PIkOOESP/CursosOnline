@@ -79,7 +79,7 @@
                     <p>Bienvenido <?php echo$_SESSION['name']?></a></p>
                     
                     <div class='submenu'>
-                        <a href=''>Editar perfil</a>
+                        <a href='../registro/registro.php?admin=<?php echo $_SESSION['admin'] ?>'>Editar perfil</a>
                         <br/><br/>
                         <a href='../login/cerrar_sesion.php'>Cerrar sesion</a>
                     </div>

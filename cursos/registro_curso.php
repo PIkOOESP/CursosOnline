@@ -27,22 +27,22 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="../estilo/estilos.css">
-        <link rel="icon" type="image/x-icon" href="../imagenes/logo/netrunners_logo.jpg">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../estilo/estilos.css"/>
+        <link rel="icon" type="image/x-icon" href="../imagenes/logo/netrunners_logo.jpg"/>
         <title>Net Runners</title>
     </head>
 
     <body>
         <div class="registro_cuerpo">
-            <h1 class="registro_titulo">Nuevo curso</h1>
+            <h1 class="registro_titulo"><?php echo $editar? "Editar curso" : "Nuevo curso" ?></h1>
 
             <form action="guardar_curso.php" method="post" enctype="multipart/form-data">
                 <?php echo $editar ? "<input type='hidden' name='id' value='".$_GET['id']."'/>" : "" ; ?>
 
                 <label for="nombre">Nombre</label>
-                <input type="text" name="nombre" id="nombre" <?php echo $editar ? "value='".$array['nombre']."'" : "" ; ?>>
+                <input type="text" name="nombre" id="nombre" <?php echo $editar ? "value='".$array['nombre']."'" : "" ; ?>/>
 
                 <br/><br/>
 
@@ -52,7 +52,7 @@
                 <br/>
 
                 <label for="horas">Horas lectivas</label>
-                <input type="number" name="horas" id="horas" <?php echo $editar ? "value='".$array['horas']."'" : "" ; ?>>
+                <input type="number" name="horas" id="horas" <?php echo $editar ? "value='".$array['horas']."'" : "" ; ?>/>
                 
                 <br/><br/>
 
