@@ -43,7 +43,7 @@
                     if(!$sesion){
                         echo '
                         <div class="menu">
-                            <a href="" class="main-link">Iniciar sesión</a>
+                            <a href="">Iniciar sesión</a>
 
                             <div class="submenu">
                                 <img src="imagenes/index/estudiante_icon.png"><a href="login/login.php?admin=0">Alumno</a>

@@ -35,7 +35,7 @@
 
                 <label for="descripcion">Descripcion</label>
                 <br/>
-                <textarea name="descripcion" id="descripcion" rows="3" cols="30" maxlength="300"></textarea>
+                <textarea name="descripcion" id="descripcion" rows="3" cols="30"></textarea>
 
                 <br/><br/>
 
