@@ -369,3 +369,47 @@ img.indice_logo{
     cursor: pointer;
     font-size: 16px;
 }
+
+.mejores h1{
+    color: #333;
+    margin-left: 160px;
+    margin-bottom: 50px;
+}
+.mejores td{
+    padding-left: 100px;
+}
+.mejores{
+    margin-left: 330px;
+    padding-bottom: 50px;
+    text-align: justify;
+}
+.global{
+    width: 120px;
+    height: 120px;
+    margin-top: 10px;
+}
+.german{
+    width: 600px;
+    height: 250px;
+    margin: auto;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border-radius: 10px;
+    box-shadow:0px 0px 5px rgb(85, 83, 83);;
+}
+.german h2{
+    padding-top: 35px;
+    padding-left: 25px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #333;
+}
+.german img{
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 100px;
+    width: 100px;
+    border-radius: 100%;
+}
+.nombre_german{
+    margin-bottom: 60px;
+}

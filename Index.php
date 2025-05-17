@@ -98,13 +98,48 @@
                 <div class="content-indicators" id="indicators"></div>
             </div>
 
-            <div class="bottom_indice">
-                <div class="bottom_indice_enlaces">
-
+            <div class="relleno">
+                <div class="mejores">
+                    <h1>¿POR QUÉ ELEGIR NETRUNNERS?</h1>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="imagenes/index/clock.png">
+                                <h3>Horarios flexibles.</h3>
+                                <a>Aprende á tu ritmo.</a>
+                            </td>
+                            <td>
+                                <img class="global" src="imagenes/index/global.png">
+                                <h3>Acceso desde 
+                                </br>cualguier lugar.</h3 >
+                                <a>Alcance global</a>
+                            </td>
+                            <td>
+                                <img src="imagenes/index/PC.png">
+                                <h3>Realiza proyectos </br>reales.</h3>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
 
-                <div class="bottom_indice_informacion">
+                <div class="german">
+                    <h2>"Gracias a NetRunners conseguí mi primer trabajo como desarrollador web."</h2>
+                    <table>
+                        <tr>
+                            <td>
+                                <img src="imagenes/index/german.png">
+                            </td>
+                            <td>
+                                <h2 class="nombre_german">Germán B. </br> estudiante de Desarrollo Web.</h2>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
 
+            <div class="bottom_indice">
+                <div class="bottom_indice_enlaces">
+                    <a href="rss/rss.php"><img src="imagenes/logo/rss.png"></a>
                 </div>
 
                 <div class="bottom_indice_referencias">

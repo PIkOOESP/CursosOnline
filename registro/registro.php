@@ -76,7 +76,7 @@
 
                 <p id=error_password></p>
 
-                <input class="boton" type="button" onclick="verificar()" value="Entrar">
+                <input class="boton" type="button" onclick="verificar()" value="<?php echo $editar? "Editar" : "Enviar" ?>">
             </form>
         </div>
     </body>
