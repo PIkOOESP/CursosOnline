@@ -45,18 +45,28 @@
         </div>
 
         <div class="pag_leccion">
+
+
+        <div class="descripcion_leccion">
+                <h1>Lección <?php echo $array_leccion['num_leccion']." : ". $array_leccion['nombre'] ?></h1>
+            </div>
+            <div class="contenido_leccion">
+                <p><?php echo $array_leccion['descripcion'] ?></p>
+            </div>
+            </br>
+            <div class="contenido_leccion">
+                <p>- <?php echo $array_leccion['tiempo']." minutos." ?></p>
+            </div>
+            </br>
             <video id="video" width="800px" controls>
                 <source src="../../imagenes/lecciones/<?php echo $array_leccion['id'].".mp4"; ?>" type="video/mp4">
             </video>
 
-            <div class="descripcion_leccion">
-                <p><?php echo $array_leccion['descripcion'] ?></p>
-            </div>
 
             <?php
                 if($_SESSION['admin']==1){
                     echo"
-                    <div class='boton_borrar_master'>
+                    <div class='boton_borrar_leccion'>
                         <a href='borrar_leccion.php?id=".$array_leccion['id']."&curso_id='".$_GET['curso_id']."'>Borrar</a>
                     </div>
                     ";

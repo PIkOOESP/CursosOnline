@@ -91,7 +91,7 @@
             <img src="../imagenes/cursos/<?php echo $array_cursos['id'] ?>.jpg" >
 
             <div class="descripcion_curso">
-                <h1>Descripción</h1>
+                <h1><?php echo $array_cursos['nombre'] ?></h1>
                 </br>
                 <p><?php echo $array_cursos['descripcion'] ?></p>
                 <div class="horas">
@@ -165,7 +165,6 @@
         </div>
 
         <div class="acordeon">
-         
             <div id="accordion">
                 <?php
                     while($fila= $query_lecciones -> fetch_assoc()){
@@ -175,21 +174,6 @@
                         ";
                     }
                 ?>
-            </div>
-
-        </div>
-
-        <div class="bottom_indice">
-            <div class="bottom_indice_enlaces">
-
-            </div>
-
-            <div class="bottom_indice_informacion">
-
-            </div>
-
-            <div class="bottom_indice_referencias">
-                <p>Pablo | Miguel Angel</p>
             </div>
         </div>
     </body>

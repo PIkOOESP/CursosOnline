@@ -72,19 +72,5 @@
                 ?>
             </tr>
         </table>
-        
-        <div class="bottom_indice">
-            <div class="bottom_indice_enlaces">
-
-            </div>
-
-            <div class="bottom_indice_informacion">
-
-            </div>
-
-            <div class="bottom_indice_referencias">
-                <p>Pablo | Miguel Angel</p>
-            </div>
-        </div>
     </body>
 </html>

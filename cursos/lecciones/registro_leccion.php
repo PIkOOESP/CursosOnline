@@ -39,9 +39,6 @@
 
                 <br/><br/>
 
-                <label for="contenido">Contenido</label>
-                <textarea name="contenido" id="contenido" rows="4" cols="40"></textarea>
-
                 <label for="tiempo">Tiempo medio</label>
                 <input type="number" name="tiempo" id="tiempo">
 

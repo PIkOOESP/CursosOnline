@@ -47,38 +47,28 @@
             </div>
         </div>
 
-        <div class="pag_master">
+        <div class="pag_leccion">
+            <div class="descripcion_leccion">
+                <h1><?php echo $array['nombre'] ?></h1>
+            </div>
+
+            <div class="descripcion_leccion">
+                <p><?php echo $array['descripcion'] ?></p>
+            </div>
+
             <video id="video" width="800px" controls>
                 <source src="../imagenes/master/videos/<?php echo $array['id'].".mp4"; ?>" type="video/mp4">
             </video>
 
-            <div class="descripcion_master">
-                <p><?php echo $array['descripcion'] ?></p>
-            </div>
-
             <?php
                 if($_SESSION['admin']==1){
                     echo"
-                    <div class='boton_borrar_master'>
+                    <div class='boton_borrar_leccion'>
                         <a href='borrar_master.php?id=".$array['id']."'>Borrar</a>
                     </div>
                     ";
                 }
             ?>
-        </div>
-
-        <div class="bottom_indice">
-            <div class="bottom_indice_enlaces">
-
-            </div>
-
-            <div class="bottom_indice_informacion">
-
-            </div>
-
-            <div class="bottom_indice_referencias">
-                <p>Pablo | Miguel Angel</p>
-            </div>
         </div>
     </body>
 </html>

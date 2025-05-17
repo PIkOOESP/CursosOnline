@@ -339,3 +339,33 @@ img.indice_logo{
     border: 1px solid #abefca;
 	background: #abefca;
 }
+.acordeon{
+    width: 1000px;
+    margin: auto;
+}
+
+.pag_leccion{
+    margin-top: 50px;
+    margin-left: 350px;
+    margin-bottom: 100px;
+}
+.descripcion_leccion{
+    margin-bottom: 30px;
+    width: 800px;
+}
+.contenido_leccion{
+    margin-bottom: 30px;
+     width: 800px;
+}
+.boton_borrar_leccion a{
+    margin-top: 30px;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(75, 213, 137, 0.7);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
