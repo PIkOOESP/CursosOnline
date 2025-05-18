@@ -20,8 +20,8 @@
     }
 
     if($stmt=$conexion->prepare("SELECT * from clases_maestras where nombre = ? ")){
-            $stmt->bind_param("s",$respuesta['nombre']);
-            $stmt->execute();
+        $stmt->bind_param("s",$respuesta['nombre']);
+        $stmt->execute();
     }
 
     if($stmt->num_rows() <= 0){

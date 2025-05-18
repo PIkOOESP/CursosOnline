@@ -5,6 +5,7 @@
     if(!isset($_SESSION['loggedin'])){
         header('Location:../login/login.php?admin=0');
     }
+
     $consulta_cursos = "SELECT * from cursos where id=" . $respuesta['id'];
     $query_cursos = $conexion -> query($consulta_cursos);
     $array_cursos = $query_cursos -> fetch_assoc();

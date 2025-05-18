@@ -7,8 +7,11 @@
     $respuesta = $_POST;
     if(isset($respuesta['id'])){
         $insercion = "UPDATE cursos set nombre='" . $respuesta['nombre'] . "', descripcion='" . $respuesta['descripcion'] . "', horas=".$respuesta['horas'] . ", dificultad_id=".$respuesta['dificultad'] . " where id=".$respuesta['id'] ;
+        
         if($query = $conexion -> query($insercion)){
             header('Location:cursos.php');
+        } else {
+            header('Location:registro_curso.php?error=2');
         }
         
     

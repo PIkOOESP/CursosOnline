@@ -20,7 +20,6 @@
 
     if($stmt->num_rows() <= 0){
         $insercion = "INSERT into lecciones (num_leccion,nombre,descripcion,tiempo,curso_id) values ('".$respuesta['numero']."','".$respuesta['nombre']."','".$respuesta['descripcion']."',".$respuesta['tiempo'].",".$respuesta['curso_id'].")";
-        print_r($insercion);
     } else {
         header('Location:registro_leccion.php?error=0&id='.$respuesta['curso_id']);
     }

@@ -11,7 +11,7 @@
         if($_SESSION['admin']==1){
             $insercion ="UPDATE profesores set nombre='".$respuesta['nombre']."',apellido='".$respuesta['apellido']."',email='".$respuesta['correo']."',password='".$respuesta['password']."where id=".$respuesta['id'];
         }
-        print_r($insercion);
+        
         if($conexion -> query($insercion)){
             header('Location:../');
         } else {

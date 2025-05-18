@@ -82,6 +82,8 @@
                         echo '<p>El curso ya esta registrado</p>';
                     } else if($error==1){
                         echo '<p>Error al subir la imagen</p>';
+                    } else if($error==2){
+                        echo '<p>Error al editar el curso</p>';
                     }
                 ?>
 
