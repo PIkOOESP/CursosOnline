@@ -170,9 +170,13 @@
                 <?php
                     while($fila= $query_lecciones -> fetch_assoc()){
                         echo"
-                        <h3>".$fila['num_leccion']."º Leccion</h3>
-                        <div><a href='lecciones/pag_leccion.php?id=".$fila['id']."&curso_id=".$array_cursos['id']."'>".$fila['nombre']."</a></div>  
-                        ";
+                        <h3>".$fila['num_leccion']."º Leccion</h3>";
+                        if($fila['nombre']=="Proximamente"){
+                            echo "<div> <a>".$fila['nombre']."</a></div>";
+                        } else {
+                            echo "<div><a href='lecciones/pag_leccion.php?id=".$fila['id']."&curso_id=".$array_cursos['id']."'>".$fila['nombre']."</a></div>  
+                            ";
+                        }
                     }
                 ?>
             </div>
